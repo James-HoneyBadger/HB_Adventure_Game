@@ -11,6 +11,7 @@ import json
 import os
 import subprocess
 import sys
+import importlib.util
 from pathlib import Path
 from io import StringIO
 
@@ -1502,10 +1503,19 @@ F5 - Test Adventure
                 json.dump(self.adventure, f, indent=2)
 
             # Import and start game engine
-            from acs_engine import EamonGame
+            import importlib.util
+
+            engine_path = (
+                Path(__file__).parent.parent.parent.parent / "acs_engine_enhanced.py"
+            )
+            spec = importlib.util.spec_from_file_location(
+                "acs_engine_enhanced", engine_path
+            )
+            acs_module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(acs_module)
 
             self.clear_game_output()
-            self.game_instance = EamonGame(temp_file)
+            self.game_instance = acs_module.EnhancedEamonGame(temp_file)
             self.game_instance.load_adventure()
             self.game_running = True
 

@@ -255,7 +255,7 @@
       "room_id": 2,
       "hardiness": 12,
       "agility": 10,
-      "friendliness": "friend",
+      "friendliness": "friendly",
       "courage": 75,
       "dialogue_id": 1,
       "can_trade": true

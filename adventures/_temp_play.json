@@ -1,425 +1,758 @@
 {
-  "title": "Dragon Mountain",
-  "author": "Enhanced Eamon Team",
-  "intro": "The village of Thornbrook has lived in fear for months. A dragon has made its lair in the mountain caves above, and demands tribute in gold and livestock. The villagers have pooled their remaining wealth to hire a hero.\n\nYou are that hero.\n\nThis adventure showcases: Character Progression, Equipment System, Trading NPCs, and Combat.",
+  "title": "MindWheel",
+  "author": "Inspired by Robert Pinsky's Classic",
+  "intro": "The year is 2036. Earth's civilization teeters on the brink of collapse.\n\nDr. Virgil Sinclair has summoned you to his laboratory. He has discovered\nthe MindWheel - a device that allows consciousness to enter the mental\nlandscapes of four great thinkers, now preserved in digital form.\n\nSomewhere within these minds lies the key to humanity's salvation:\nfour sacred objects that, when combined, can restore balance to the world.\n\nYou must journey through:\n- The mind of a POET, where language shapes reality\n- The mind of a SCIENTIST, where logic rules all\n- The mind of a GENERAL, where strategy and conflict reign\n- The mind of a PROPHET, where visions of future and past collide\n\nFind the four sacred objects. Save humanity. But be warned:\nThese minds are not safe places. Madness lurks in brilliance.\n\nAre you ready to enter the MindWheel?",
   "start_room": 1,
   "settings": {
     "allow_save": true,
-    "enable_puzzles": true,
-    "enable_magic": true,
-    "difficulty": "hard",
-    "enable_combat_xp": true
+    "time_enabled": false,
+    "weather_enabled": false
   },
   "rooms": [
     {
       "id": 1,
-      "name": "Village Square",
-      "description": "The humble village of Thornbrook. Frightened villagers peer at you from their windows. A shop is to the east, and the mountain path begins to the north.",
+      "name": "Dr. Sinclair's Laboratory - 2036",
+      "description": "A cluttered lab filled with computers, neural scanners, and mysterious\nequipment. Dr. Sinclair stands beside the MindWheel apparatus - a\ncrystalline sphere pulsing with inner light.\n\nFour pedestals surround the sphere, each labeled: POET, SCIENTIST,\nGENERAL, PROPHET. Place your hand on a pedestal to enter that mind.\n\nA STATUS MONITOR shows your collected objects.",
       "exits": {
-        "north": 2,
-        "east": 3
-      },
-      "light_level": "bright",
-      "is_safe_zone": true
+        "poet": 10,
+        "scientist": 30,
+        "general": 50,
+        "prophet": 70
+      }
     },
     {
-      "id": 2,
-      "name": "Mountain Path",
-      "description": "A steep, winding path up the mountainside. Scattered bones line the trail - grim reminders of the dragon's appetite.",
+      "id": 10,
+      "name": "The Poet's Garden of Words",
+      "description": "You stand in a garden where language has physical form. Sentences\nwind through the air like vines. Metaphors bloom as flowers. The very\nground beneath your feet is composed of compressed poetry.\n\nThe sky above shifts colors with each spoken word. To the east lies\na Library of Unwritten Books. West leads to the Sea of Syllables.\nNorth is the Tower of Verse.",
       "exits": {
-        "south": 1,
-        "north": 4
-      },
-      "light_level": "normal"
+        "north": 11,
+        "east": 12,
+        "west": 13,
+        "exit": 1
+      }
     },
     {
-      "id": 3,
-      "name": "General Store",
-      "description": "A small shop with various supplies. The merchant looks nervous but eager for your business.",
+      "id": 11,
+      "name": "The Tower of Verse",
+      "description": "A spiraling tower built entirely from stanzas. Each level represents\na different poetic form: sonnets, haiku, free verse, epic poetry.\nThe stairs are made of rhythm and rhyme.\n\nAt the top, you see a gleaming object catching the metaphorical light.\nThe garden lies south.",
       "exits": {
-        "west": 1
-      },
-      "light_level": "bright",
-      "is_safe_zone": true
+        "south": 10,
+        "up": 14
+      }
     },
     {
-      "id": 4,
-      "name": "Cave Entrance",
-      "description": "The mouth of a dark cave yawns before you. The smell of sulfur and smoke drifts out. Scorched earth surrounds the entrance.",
+      "id": 12,
+      "name": "Library of Unwritten Books",
+      "description": "Endless shelves stretch into infinity, filled with books that were\nnever written - stories that died with their authors, poems lost to time.\nGhost readers drift between the stacks, searching for what might have been.\n\nA GUARDIAN made of blank pages watches over this place. The garden is west.",
       "exits": {
-        "south": 2,
-        "north": 5
-      },
-      "light_level": "normal"
+        "west": 10
+      }
     },
     {
-      "id": 5,
-      "name": "Outer Cavern",
-      "description": "A large cavern with multiple tunnels. The dragon's roars echo from deeper within. Piles of bones are scattered about.",
+      "id": 13,
+      "name": "Sea of Syllables",
+      "description": "An ocean where waves are composed of spoken sounds. Phonemes drift\nlike foam. You can hear the rhythm of breathing, the percussion of\nconsonants, the melody of vowels.\n\nA small boat made of parentheses rocks gently at a dock. The garden is east.",
       "exits": {
-        "south": 4,
-        "east": 6,
-        "west": 7,
-        "north": 8
-      },
-      "light_level": "dim",
-      "requires_light_source": false
+        "east": 10,
+        "sail": 15
+      }
     },
     {
-      "id": 6,
-      "name": "Goblin Warren",
-      "description": "A smaller cave filled with crude furnishings and the stench of goblins. These creatures serve the dragon.",
+      "id": 14,
+      "name": "Peak of the Tower",
+      "description": "The highest point in the Poet's mind. From here you can see the entire\nlinguistic landscape - every word ever spoken spreads below like a\nglittering tapestry.\n\nOn a pedestal of perfect meter rests THE GOLDEN LYRE.\nStairs descend to the south.",
       "exits": {
-        "west": 5
-      },
-      "light_level": "dim"
+        "down": 11
+      }
     },
     {
-      "id": 7,
-      "name": "Underground Stream",
-      "description": "A crystal-clear stream flows through this cavern. Strange glowing mushrooms provide dim illumination.",
+      "id": 15,
+      "name": "Island of Silence",
+      "description": "A strange island where no sound exists. Pure meaning without words.\nCommunication happens through thought alone. In the center stands\na monument to everything that cannot be expressed.\n\nYou can sail back west.",
       "exits": {
-        "east": 5
-      },
-      "light_level": "dim",
-      "has_trap": false
+        "sail": 13
+      }
     },
     {
-      "id": 8,
-      "name": "Dragon's Hoard",
-      "description": "The massive chamber where the dragon sleeps atop its mountain of treasure. Gold coins, jewels, weapons, and armor are piled everywhere. The dragon's eyes gleam in the darkness.",
+      "id": 30,
+      "name": "The Scientist's Cathedral of Logic",
+      "description": "A vast hall of pure rationality. Mathematical equations float in the\nair like stained glass. The walls are periodic tables. The floor is\na geometric proof.\n\nNorth leads to the Laboratory of Experiments. East to the Observation\nDeck. West to the Archive of Theorems. South exits this mind.",
       "exits": {
-        "south": 5
-      },
-      "light_level": "dim",
-      "requires_light_source": false
+        "north": 31,
+        "east": 32,
+        "west": 33,
+        "exit": 1
+      }
+    },
+    {
+      "id": 31,
+      "name": "Laboratory of Experiments",
+      "description": "Beakers bubble with chemical reactions that follow perfect laws.\nEvery experiment succeeds because failure has been logically eliminated.\nCausality is visible as glowing threads connecting all phenomena.\n\nA ROBOT ASSISTANT manages the equipment. The cathedral is south.",
+      "exits": {
+        "south": 30,
+        "analyze": 34
+      }
+    },
+    {
+      "id": 32,
+      "name": "Observation Deck",
+      "description": "A transparent platform floating in space. Below, you observe the\nuniverse as the Scientist sees it: pure mathematics, elegant equations,\nbeauty in natural law.\n\nStars are actually data points. Galaxies are probability distributions.\nThe cathedral is west.",
+      "exits": {
+        "west": 30
+      }
+    },
+    {
+      "id": 33,
+      "name": "Archive of Theorems",
+      "description": "Filing cabinets stretch forever, each drawer containing a proven\ntheorem. Axioms hang on the walls like sacred texts. This is the\ntemple of pure knowledge.\n\nA puzzle blocks further access - THE LOGICAL LOCK. The cathedral is east.",
+      "exits": {
+        "east": 30
+      }
+    },
+    {
+      "id": 34,
+      "name": "Inner Sanctum of Reason",
+      "description": "The core of scientific thought. Everything here reduces to fundamental\nprinciples. Complexity becomes simplicity. Chaos reveals its hidden order.\n\nOn an altar of empiricism rests THE CRYSTAL PRISM.\nThe laboratory is accessible to the west.",
+      "exits": {
+        "west": 31
+      }
+    },
+    {
+      "id": 50,
+      "name": "The General's War Room of Strategy",
+      "description": "A command center where conflict is eternal. Maps cover every surface,\nshowing battles past, present, and hypothetical. Toy soldiers move\nthemselves across terrain, reenacting history.\n\nNorth is the Armory. East leads to the Battlefield Memorial. West to\nthe Hall of Tactics. South exits this mind.",
+      "exits": {
+        "north": 51,
+        "east": 52,
+        "west": 53,
+        "exit": 1
+      }
+    },
+    {
+      "id": 51,
+      "name": "The Armory of History",
+      "description": "Weapons from every era hang on the walls: swords, muskets, missiles.\nEach tells a story of human conflict. The General's mind catalogs\nevery battle, every strategy, every victory and defeat.\n\nA SPECTRAL SOLDIER stands guard. The war room is south.",
+      "exits": {
+        "south": 50
+      }
+    },
+    {
+      "id": 52,
+      "name": "Battlefield Memorial",
+      "description": "A somber field of markers, each representing a fallen soldier from\nsome war, real or imagined. The ground is stained with memory.\nGhost armies drill in formation nearby.\n\nThe weight of sacrifice is palpable here. The war room is west.",
+      "exits": {
+        "west": 50
+      }
+    },
+    {
+      "id": 53,
+      "name": "Hall of Tactics",
+      "description": "Holographic displays show famous battles: Thermopylae, Waterloo,\nGettysburg, Normandy. Each can be replayed, analyzed, improved.\nThe General's genius lies in seeing patterns in chaos.\n\nA STRATEGIC CHALLENGE awaits. The war room is east.",
+      "exits": {
+        "east": 50,
+        "challenge": 54
+      }
+    },
+    {
+      "id": 54,
+      "name": "Chamber of Victory",
+      "description": "A room filled with trophies and standards captured in battle. But\nalso something else: understanding. The General learned that true\nvictory isn't in conquest, but in preventing war.\n\nOn a stand of beaten swords rests THE BRONZE SHIELD.\nThe hall is west.",
+      "exits": {
+        "west": 53
+      }
+    },
+    {
+      "id": 70,
+      "name": "The Prophet's Nexus of Time",
+      "description": "Past, present, and future exist simultaneously here. You see your own\nbirth and death in the same moment. History spirals around you like\na double helix of causality.\n\nNorth leads to the Hall of Visions. East to the Oracle's Chamber.\nWest to the Ruins of Tomorrow. South exits this mind.",
+      "exits": {
+        "north": 71,
+        "east": 72,
+        "west": 73,
+        "exit": 1
+      }
+    },
+    {
+      "id": 71,
+      "name": "Hall of Visions",
+      "description": "Prophecies manifest as living images. Some have come true, others\nnever will. The Prophet sees all possible futures branching like\na tree of infinite possibility.\n\nA SEER wrapped in temporal energy meditates here. The nexus is south.",
+      "exits": {
+        "south": 70
+      }
+    },
+    {
+      "id": 72,
+      "name": "Oracle's Chamber",
+      "description": "A circular room with mirrors showing different timelines. In one,\nhumanity thrives. In another, it falls. In most, the outcome hangs\nin balance, waiting for choices yet unmade.\n\nThe nexus is west.",
+      "exits": {
+        "west": 70
+      }
+    },
+    {
+      "id": 73,
+      "name": "Ruins of Tomorrow",
+      "description": "A devastated cityscape that might be Earth's future. Buildings crumble\nunder the weight of unfulfilled potential. This is what happens if\nyou fail your mission.\n\nBut among the ruins, hope persists. The nexus is east.",
+      "exits": {
+        "east": 70,
+        "search": 74
+      }
+    },
+    {
+      "id": 74,
+      "name": "Temple of Renewal",
+      "description": "Hidden beneath the ruins, a temple dedicated to rebirth and second\nchances. The Prophet understood: endings are also beginnings.\n\nOn an altar of eternal flame rests THE SILVER CHALICE.\nThe ruins are accessible to the north.",
+      "exits": {
+        "north": 73
+      }
+    },
+    {
+      "id": 90,
+      "name": "The MindWheel's Core",
+      "description": "You have collected all four sacred objects. As you hold them together,\nthey resonate with power:\n\n- The GOLDEN LYRE (art and beauty)\n- The CRYSTAL PRISM (knowledge and truth)  \n- The BRONZE SHIELD (strength and protection)\n- The SILVER CHALICE (hope and renewal)\n\nThese four elements - creativity, wisdom, courage, and faith - are\nwhat humanity needs to survive. The MindWheel pulses with energy,\nready to transmit this understanding to all of Earth.\n\nDr. Sinclair's voice echoes: 'You have done it! The synthesis is complete!\nHumanity will endure!'",
+      "exits": {
+        "return": 1
+      }
     }
   ],
   "items": [
     {
       "id": 1,
-      "name": "rusty sword",
-      "description": "A basic iron sword, showing signs of age and wear.",
-      "type": "weapon",
+      "name": "golden lyre",
+      "description": "A magnificent lyre that plays the music of pure creativity. Found in the Poet's mind, it represents art, beauty, and the power of expression.",
+      "room_id": 14,
+      "is_takeable": true,
+      "value": 1000,
       "weight": 5,
-      "value": 20,
-      "is_weapon": true,
-      "weapon_damage": 5,
-      "location": 0,
-      "can_be_equipped": true,
-      "equipment_slot": "weapon",
-      "durability": 50,
-      "max_durability": 100
+      "special_properties": {
+        "is_quest_item": true,
+        "sacred_object": true
+      }
     },
     {
       "id": 2,
-      "name": "leather armor",
-      "description": "Basic leather armor that provides minimal protection.",
-      "type": "armor",
-      "weight": 10,
-      "value": 50,
-      "is_weapon": false,
-      "location": -3,
-      "can_be_equipped": true,
-      "equipment_slot": "armor",
-      "armor_value": 2,
-      "durability": 80
+      "name": "crystal prism",
+      "description": "A flawless prism that refracts truth into its component parts. Found in the Scientist's mind, it represents knowledge, logic, and understanding.",
+      "room_id": 34,
+      "is_takeable": true,
+      "value": 1000,
+      "weight": 3,
+      "special_properties": {
+        "is_quest_item": true,
+        "sacred_object": true
+      }
     },
     {
       "id": 3,
-      "name": "healing potion",
-      "description": "A red potion that restores health when consumed.",
-      "type": "drinkable",
-      "weight": 1,
-      "value": 30,
-      "is_weapon": false,
-      "location": -3,
-      "on_use_effect": "heal_20",
-      "consumable": true
+      "name": "bronze shield",
+      "description": "A shield marked with the scars of countless battles. Found in the General's mind, it represents strength, protection, and courage.",
+      "room_id": 54,
+      "is_takeable": true,
+      "value": 1000,
+      "weight": 15,
+      "special_properties": {
+        "is_quest_item": true,
+        "sacred_object": true
+      }
     },
     {
       "id": 4,
-      "name": "torch",
-      "description": "A wooden torch wrapped in oil-soaked cloth. Provides light in dark places.",
-      "type": "normal",
-      "weight": 2,
-      "value": 5,
-      "is_weapon": false,
-      "location": -3,
-      "special_abilities": [
-        "light_source"
-      ],
-      "on_use_effect": "provides_light"
-    },
-    {
-      "id": 5,
-      "name": "dragonscale shield",
-      "description": "A shield made from dragon scales. Incredibly tough and resistant to fire.",
-      "type": "armor",
-      "weight": 8,
-      "value": 500,
-      "is_weapon": false,
-      "location": 8,
-      "can_be_equipped": true,
-      "equipment_slot": "shield",
-      "armor_value": 5,
-      "special_abilities": [
-        "fire_resistance"
-      ],
-      "magical_bonus": 2,
-      "durability": 200
-    },
-    {
-      "id": 6,
-      "name": "flaming sword",
-      "description": "A magnificent sword wreathed in magical flames. The blade never dulls.",
-      "type": "weapon",
-      "weight": 6,
-      "value": 800,
-      "is_weapon": true,
-      "weapon_damage": 15,
-      "location": 8,
-      "can_be_equipped": true,
-      "equipment_slot": "weapon",
-      "magical_bonus": 5,
-      "special_abilities": [
-        "fire_damage",
-        "never_dulls"
-      ],
-      "durability": 999
-    },
-    {
-      "id": 7,
-      "name": "goblin dagger",
-      "description": "A crude but sharp dagger used by goblins.",
-      "type": "weapon",
-      "weight": 2,
-      "value": 10,
-      "is_weapon": true,
-      "weapon_damage": 3,
-      "location": 6,
-      "can_be_equipped": true,
-      "equipment_slot": "weapon",
-      "durability": 30
-    },
-    {
-      "id": 8,
-      "name": "gold coins",
-      "description": "A pile of 500 gold coins from the dragon's hoard!",
-      "type": "treasure",
-      "weight": 5,
-      "value": 500,
-      "is_weapon": false,
-      "location": 8
-    },
-    {
-      "id": 9,
-      "name": "ruby necklace",
-      "description": "An exquisite necklace with a massive ruby centerpiece.",
-      "type": "treasure",
-      "weight": 1,
+      "name": "silver chalice",
+      "description": "A chalice that never empties, always filled with possibility. Found in the Prophet's mind, it represents hope, renewal, and faith.",
+      "room_id": 74,
+      "is_takeable": true,
       "value": 1000,
-      "is_weapon": false,
-      "location": 8,
-      "can_be_equipped": true,
-      "equipment_slot": "accessory",
-      "magical_bonus": 1
+      "weight": 4,
+      "special_properties": {
+        "is_quest_item": true,
+        "sacred_object": true
+      }
     },
     {
       "id": 10,
-      "name": "chain mail",
-      "description": "Heavy chain mail armor. Provides excellent protection.",
-      "type": "armor",
-      "weight": 25,
-      "value": 200,
-      "is_weapon": false,
-      "location": -3,
-      "can_be_equipped": true,
-      "equipment_slot": "armor",
-      "armor_value": 8,
-      "durability": 150
+      "name": "book of unwritten poems",
+      "description": "A book whose pages fill with new poetry each time you open it. The poems are beautiful but ephemeral.",
+      "room_id": 12,
+      "is_takeable": true,
+      "value": 50,
+      "weight": 2
     },
     {
       "id": 11,
-      "name": "steel sword",
-      "description": "A well-crafted steel blade. Sharp and balanced.",
-      "type": "weapon",
-      "weight": 5,
-      "value": 100,
-      "is_weapon": true,
-      "weapon_damage": 10,
-      "location": -3,
-      "can_be_equipped": true,
-      "equipment_slot": "weapon",
-      "durability": 100
+      "name": "metaphor seed",
+      "description": "A seed that, when planted in soil, grows into a living metaphor. Handle with care.",
+      "room_id": 10,
+      "is_takeable": true,
+      "value": 25,
+      "weight": 1
     },
     {
-      "id": 12,
-      "name": "magic scroll",
-      "description": "A scroll inscribed with the spell 'Fireball'. Single use.",
-      "type": "readable",
-      "weight": 1,
+      "id": 20,
+      "name": "equation crystal",
+      "description": "A crystal containing a perfect mathematical proof. It glows with the satisfaction of QED.",
+      "room_id": 30,
+      "is_takeable": true,
       "value": 75,
-      "is_weapon": false,
-      "location": -3,
-      "on_use_effect": "fireball",
-      "consumable": true
+      "weight": 2
+    },
+    {
+      "id": 21,
+      "name": "beaker of causality",
+      "description": "A beaker containing the essence of cause and effect. Mix carefully.",
+      "room_id": 31,
+      "is_takeable": true,
+      "value": 60,
+      "weight": 3
+    },
+    {
+      "id": 30,
+      "name": "ancient battle standard",
+      "description": "A tattered flag from some long-forgotten war. The General's memories cling to it.",
+      "room_id": 51,
+      "is_takeable": true,
+      "value": 40,
+      "weight": 4
+    },
+    {
+      "id": 31,
+      "name": "tactical map",
+      "description": "A map that shows not just terrain, but strategic possibilities. Napoleon would have wept to own it.",
+      "room_id": 53,
+      "is_takeable": true,
+      "value": 80,
+      "weight": 2
+    },
+    {
+      "id": 40,
+      "name": "temporal compass",
+      "description": "A compass that points not to north, but to significant moments in time.",
+      "room_id": 70,
+      "is_takeable": true,
+      "value": 100,
+      "weight": 2
+    },
+    {
+      "id": 41,
+      "name": "prophecy scroll",
+      "description": "A scroll containing a prophecy. Whether it's yours is unclear.",
+      "room_id": 71,
+      "is_takeable": true,
+      "value": 90,
+      "weight": 1
+    },
+    {
+      "id": 50,
+      "name": "mindwheel interface",
+      "description": "A neural interface device. Dr. Sinclair's technology allows you to travel between minds.",
+      "room_id": 1,
+      "is_takeable": true,
+      "value": 0,
+      "weight": 2,
+      "special_properties": {
+        "required_for_travel": true
+      }
     }
   ],
   "monsters": [
     {
       "id": 1,
-      "name": "Marcus the Merchant",
-      "description": "A portly merchant with a nervous smile. He's trying to make a profit even in these dark times.",
-      "hardiness": 10,
-      "agility": 8,
+      "name": "Dr. Virgil Sinclair",
+      "description": "A brilliant but eccentric scientist. He created the MindWheel and recruited you for this vital mission.",
+      "room_id": 1,
+      "hardiness": 12,
+      "agility": 10,
       "friendliness": "friendly",
-      "courage": 30,
-      "location": 3,
-      "weapon_id": 0,
-      "dialogue_id": 1,
-      "can_trade": true,
-      "trade_inventory": [
-        2,
-        3,
-        4,
-        10,
-        11,
-        12
-      ],
-      "reaction_level": 50,
-      "ai_behavior": "passive"
-    },
-    {
-      "id": 2,
-      "name": "goblin warrior",
-      "description": "A snarling goblin with yellowed teeth and a crude weapon.",
-      "hardiness": 8,
-      "agility": 12,
-      "friendliness": "hostile",
-      "courage": 40,
-      "location": 6,
-      "weapon_id": 7,
-      "reaction_level": -50,
-      "ai_behavior": "aggressive",
-      "drops_items_on_death": [
-        7
-      ],
-      "experience_value": 25
-    },
-    {
-      "id": 3,
-      "name": "goblin scout",
-      "description": "A smaller, quicker goblin keeping watch.",
-      "hardiness": 6,
-      "agility": 15,
-      "friendliness": "hostile",
-      "courage": 30,
-      "location": 5,
-      "weapon_id": 0,
-      "reaction_level": -50,
-      "ai_behavior": "defensive",
-      "experience_value": 15
-    },
-    {
-      "id": 4,
-      "name": "Scorch the Dragon",
-      "description": "A massive red dragon with scales like rubies and eyes like burning coals. Smoke curls from its nostrils. This is a truly fearsome opponent!",
-      "hardiness": 100,
-      "agility": 20,
-      "friendliness": "hostile",
       "courage": 100,
-      "location": 8,
-      "weapon_id": 0,
-      "dialogue_id": 2,
+      "dialogue_id": 1,
+      "can_trade": false
+    },
+    {
+      "id": 10,
+      "name": "Guardian of Pages",
+      "description": "A being made of blank paper and possibility. It protects the unwritten works from those who would destroy potential.",
+      "room_id": 12,
+      "hardiness": 15,
+      "agility": 14,
+      "friendliness": "neutral",
+      "courage": 80,
+      "dialogue_id": 10,
       "can_trade": false,
-      "reaction_level": -100,
       "special_abilities": [
-        "fire_breath",
-        "thick_scales",
-        "flight"
-      ],
-      "ai_behavior": "intelligent",
-      "experience_value": 500
+        "word_magic",
+        "poetic_defense"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Muse of Inspiration",
+      "description": "A radiant being that embodies creative inspiration. Speaking with it fills you with ideas.",
+      "room_id": 10,
+      "hardiness": 8,
+      "agility": 16,
+      "friendliness": "friendly",
+      "courage": 60,
+      "dialogue_id": 11,
+      "can_trade": true
+    },
+    {
+      "id": 20,
+      "name": "Logic Automaton",
+      "description": "A perfectly rational robot. It can only be convinced through sound reasoning and empirical evidence.",
+      "room_id": 31,
+      "hardiness": 20,
+      "agility": 12,
+      "friendliness": "neutral",
+      "courage": 100,
+      "dialogue_id": 20,
+      "can_trade": false,
+      "special_abilities": [
+        "calculate",
+        "analyze"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Paradox Entity",
+      "description": "A being that exists and doesn't exist simultaneously. The Scientist's mind struggles to compute it.",
+      "room_id": 32,
+      "hardiness": 1,
+      "agility": 99,
+      "friendliness": "hostile",
+      "courage": 50,
+      "dialogue_id": 21,
+      "can_trade": false,
+      "special_abilities": [
+        "paradox_shift",
+        "logic_break"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Spectral Soldier",
+      "description": "The ghost of a warrior who served the General in life. Bound by duty even in death.",
+      "room_id": 51,
+      "hardiness": 18,
+      "agility": 15,
+      "friendliness": "neutral",
+      "courage": 95,
+      "dialogue_id": 30,
+      "can_trade": false,
+      "special_abilities": [
+        "martial_skill",
+        "tactical_mind"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "War Strategist",
+      "description": "An aspect of the General's tactical genius given form. It can solve any military puzzle.",
+      "room_id": 53,
+      "hardiness": 14,
+      "agility": 13,
+      "friendliness": "friendly",
+      "courage": 90,
+      "dialogue_id": 31,
+      "can_trade": true
+    },
+    {
+      "id": 40,
+      "name": "Temporal Seer",
+      "description": "A being unstuck in time, experiencing all moments at once. Its advice is cryptic but valuable.",
+      "room_id": 71,
+      "hardiness": 10,
+      "agility": 20,
+      "friendliness": "neutral",
+      "courage": 70,
+      "dialogue_id": 40,
+      "can_trade": false,
+      "special_abilities": [
+        "see_future",
+        "rewind_time"
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Oracle of Possibilities",
+      "description": "A prophet who sees all potential futures. Ask carefully - some knowledge is dangerous.",
+      "room_id": 72,
+      "hardiness": 12,
+      "agility": 18,
+      "friendliness": "friendly",
+      "courage": 85,
+      "dialogue_id": 41,
+      "can_trade": true
     }
   ],
-  "puzzles": [],
   "dialogues": [
     {
       "npc_id": 1,
-      "greeting": "Welcome, brave hero! Looking for supplies before you face the dragon? I have everything you need... for the right price!",
+      "greeting": "Welcome! The MindWheel is ready. Four minds await exploration. Each holds a sacred object vital to humanity's survival.",
       "topics": [
         {
-          "keyword": "trade",
-          "response": "Of course! I have weapons, armor, potions - everything an adventurer needs. Just say what you want to buy or sell.",
-          "changes_reaction": 5
+          "keyword": "mission",
+          "response": "Enter the minds of the Poet, Scientist, General, and Prophet. Find the four sacred objects. When combined, they will restore balance to our dying world."
         },
         {
-          "keyword": "dragon",
-          "response": "That beast has ruined my business! No caravans dare come here anymore. If you slay it, I'll give you a discount on everything!",
-          "changes_reaction": 10
+          "keyword": "mindwheel",
+          "response": "My greatest creation - a device for exploring preserved consciousness. These four minds were the greatest of their generation. Now they can save us all."
         },
         {
-          "keyword": "advice",
-          "response": "The dragon is incredibly powerful. You'll need good equipment and maybe some magic. Fire resistance would help - those scales of his are tough!",
-          "changes_reaction": 5
-        },
-        {
-          "keyword": "village",
-          "response": "Thornbrook was once a prosperous place. Now we live in fear. Please, save us from this terror!",
-          "changes_reaction": 5
+          "keyword": "danger",
+          "response": "Yes, there is danger. These are powerful minds, and not all friendly. You may face guardians, puzzles, even madness. But humanity's future depends on your success."
         }
-      ],
-      "farewell": "Good luck! Come back alive and I'll buy any treasure you find!"
+      ]
     },
     {
-      "npc_id": 4,
-      "greeting": "FOOLISH MORTAL! You dare enter MY domain? I have devoured HUNDREDS of your kind!",
+      "npc_id": 10,
+      "greeting": "Who dares enter the library of what-might-have-been?",
       "topics": [
         {
-          "keyword": "fight",
-          "response": "Then you shall DIE like the others! Your bones will join the pile!",
-          "changes_reaction": -20
+          "keyword": "books",
+          "response": "These are works that died unwritten. Every book an author dreamed of but never penned. Every story lost to time, silence, or fear. I protect their potential."
         },
         {
-          "keyword": "treasure",
-          "response": "MY TREASURE! Every piece is MINE! Stolen by my claws from kingdoms far and wide! You shall not have a single coin!",
-          "changes_reaction": -10
-        },
-        {
-          "keyword": "village",
-          "response": "Those pathetic creatures? Their tribute is barely worth my time. But it amuses me to watch them grovel.",
-          "changes_reaction": -5
-        },
-        {
-          "keyword": "leave",
-          "response": "Run while you can, little mortal. But know that I will find you if you speak of my hoard to others!",
-          "changes_reaction": 10
+          "keyword": "lyre",
+          "response": "The Golden Lyre? It rests atop the Tower of Verse. But beware - to reach it, you must climb stairs made of rhythm and rhyme. One misstep in meter, and you fall."
         }
-      ],
-      "farewell": "Your bones will decorate my lair!"
+      ]
+    },
+    {
+      "npc_id": 11,
+      "greeting": "Ah, a seeker of beauty! Let me inspire you with visions of art and poetry.",
+      "topics": [
+        {
+          "keyword": "inspiration",
+          "response": "Inspiration is everywhere in this mind. Every word has weight, every silence has meaning. The Poet understood: language creates reality."
+        },
+        {
+          "keyword": "help",
+          "response": "I can offer you a metaphor seed. Plant it wisely, and it may help you understand this place better."
+        }
+      ]
+    },
+    {
+      "npc_id": 20,
+      "greeting": "Greetings. I am a rational entity. State your purpose in logical terms.",
+      "topics": [
+        {
+          "keyword": "prism",
+          "response": "The Crystal Prism is stored in the Inner Sanctum. Access requires solving the Logical Lock. I can help if you demonstrate sufficient reasoning ability."
+        },
+        {
+          "keyword": "logic",
+          "response": "Logic is the foundation of truth. A implies B. B implies C. Therefore A implies C. Simple. Elegant. Perfect."
+        }
+      ]
+    },
+    {
+      "npc_id": 21,
+      "greeting": "I am and I am not. I exist in superposition. Your mind cannot fully comprehend me.",
+      "topics": [
+        {
+          "keyword": "paradox",
+          "response": "This statement is false. Did I just speak truth or lie? Your wetware cannot process the recursion. The Scientist's mind recoils from my existence."
+        }
+      ]
+    },
+    {
+      "npc_id": 30,
+      "greeting": "Halt! State your business in the General's domain.",
+      "topics": [
+        {
+          "keyword": "shield",
+          "response": "The Bronze Shield is in the Chamber of Victory. But to reach it, you must complete the Strategic Challenge. Prove your tactical worth."
+        },
+        {
+          "keyword": "war",
+          "response": "I have fought in ten thousand battles. Every strategy, every formation, every feint and charge - I know them all. War is eternal here."
+        }
+      ]
+    },
+    {
+      "npc_id": 31,
+      "greeting": "A visitor to the tactical hall. Do you have the mind for strategy?",
+      "topics": [
+        {
+          "keyword": "challenge",
+          "response": "The Strategic Challenge tests your ability to think like the General. It's not about brute force, but elegant solutions. Win without fighting, if you can."
+        },
+        {
+          "keyword": "victory",
+          "response": "True victory isn't destroying your enemy - it's making conflict unnecessary. The General learned this late in life. The shield represents that wisdom."
+        }
+      ]
+    },
+    {
+      "npc_id": 40,
+      "greeting": "I have seen your arrival. I will see your departure. All moments are now.",
+      "topics": [
+        {
+          "keyword": "future",
+          "response": "I see many futures. In some, you succeed. In others, you fail. The timeline branches with every choice. Choose wisely."
+        },
+        {
+          "keyword": "chalice",
+          "response": "The Silver Chalice hides in the Temple of Renewal, beneath the Ruins of Tomorrow. Ironic, isn't it? Hope buried under despair."
+        }
+      ]
+    },
+    {
+      "npc_id": 41,
+      "greeting": "Welcome, seeker. I can show you what may come to pass.",
+      "topics": [
+        {
+          "keyword": "prophecy",
+          "response": "I prophesy this: if you gather all four sacred objects, humanity will endure. If you fail, civilization falls within a generation."
+        },
+        {
+          "keyword": "hope",
+          "response": "Hope is not certainty, but possibility. The chalice represents this truth. As long as we have hope, we have a future."
+        }
+      ]
     }
   ],
   "quests": [
     {
       "id": 1,
-      "title": "Slay the Dragon",
-      "description": "The village of Thornbrook needs you to defeat Scorch the Dragon and end his reign of terror.",
-      "giver_npc": 1,
+      "name": "Retrieve the Golden Lyre",
+      "description": "Enter the Poet's mind and find the Golden Lyre, symbol of creativity and beauty.",
+      "giver_id": 1,
       "objectives": [
         {
-          "type": "kill_monster",
-          "target_id": 4,
-          "quantity": 1,
-          "description": "Defeat Scorch the Dragon",
-          "completed": false
+          "type": "obtain_item",
+          "target": "golden lyre",
+          "required": 1
         }
       ],
-      "rewards_gold": 1000,
-      "rewards_experience": 500,
-      "rewards_items": [],
-      "status": "active",
-      "required_for_completion": true
+      "reward_xp": 250,
+      "reward_items": []
+    },
+    {
+      "id": 2,
+      "name": "Retrieve the Crystal Prism",
+      "description": "Enter the Scientist's mind and find the Crystal Prism, symbol of knowledge and truth.",
+      "giver_id": 1,
+      "objectives": [
+        {
+          "type": "obtain_item",
+          "target": "crystal prism",
+          "required": 1
+        }
+      ],
+      "reward_xp": 250,
+      "reward_items": []
+    },
+    {
+      "id": 3,
+      "name": "Retrieve the Bronze Shield",
+      "description": "Enter the General's mind and find the Bronze Shield, symbol of strength and courage.",
+      "giver_id": 1,
+      "objectives": [
+        {
+          "type": "obtain_item",
+          "target": "bronze shield",
+          "required": 1
+        }
+      ],
+      "reward_xp": 250,
+      "reward_items": []
+    },
+    {
+      "id": 4,
+      "name": "Retrieve the Silver Chalice",
+      "description": "Enter the Prophet's mind and find the Silver Chalice, symbol of hope and renewal.",
+      "giver_id": 1,
+      "objectives": [
+        {
+          "type": "obtain_item",
+          "target": "silver chalice",
+          "required": 1
+        }
+      ],
+      "reward_xp": 250,
+      "reward_items": []
+    },
+    {
+      "id": 5,
+      "name": "Unite the Sacred Objects",
+      "description": "Bring all four sacred objects together to save humanity.",
+      "giver_id": 1,
+      "objectives": [
+        {
+          "type": "obtain_item",
+          "target": "golden lyre",
+          "required": 1
+        },
+        {
+          "type": "obtain_item",
+          "target": "crystal prism",
+          "required": 1
+        },
+        {
+          "type": "obtain_item",
+          "target": "bronze shield",
+          "required": 1
+        },
+        {
+          "type": "obtain_item",
+          "target": "silver chalice",
+          "required": 1
+        }
+      ],
+      "reward_xp": 1000,
+      "reward_items": [],
+      "completion_triggers_ending": true
     }
+  ],
+  "puzzles": [
+    {
+      "id": 1,
+      "type": "sequence",
+      "room_id": 11,
+      "description": "To climb the Tower of Verse, you must recite poetry in perfect meter. The rhythm must be exact.",
+      "success_message": "Your words flow in perfect iambic pentameter! The tower accepts you and allows passage upward.",
+      "failure_message": "Your meter falters. The stairs beneath your feet dissolve into scattered syllables.",
+      "is_solved": false
+    },
+    {
+      "id": 2,
+      "type": "combination",
+      "room_id": 33,
+      "description": "The Logical Lock requires you to solve a complex proof. Three axioms must be combined in the correct order.",
+      "combination": "ABC",
+      "success_message": "QED! The lock recognizes your logical prowess and opens, revealing the path to the Inner Sanctum.",
+      "failure_message": "Your reasoning is flawed. The lock remains sealed. Try again with better logic.",
+      "is_solved": false,
+      "attempts_allowed": -1
+    },
+    {
+      "id": 3,
+      "type": "custom",
+      "room_id": 53,
+      "description": "The Strategic Challenge: a holographic battle simulation. You must win without losing a single soldier.",
+      "success_message": "Brilliant! You achieved victory through strategy, not sacrifice. The General would be proud. The path opens.",
+      "failure_message": "Your tactics resulted in casualties. The General's mind rejects wasteful commanders. Try a different approach.",
+      "is_solved": false
+    },
+    {
+      "id": 4,
+      "type": "hidden_object",
+      "room_id": 73,
+      "description": "Among the Ruins of Tomorrow, hope is hidden. You must search carefully to find the Temple of Renewal.",
+      "success_message": "You discover a hidden stairway beneath the rubble. Hope persists even in devastation. You find the temple.",
+      "failure_message": "You see only destruction. Perhaps hope requires looking deeper than surface despair.",
+      "is_solved": false
+    }
+  ],
+  "notes": [
+    "Inspired by Robert Pinsky's 'MindWheel' (1984), published by Synapse/Broderbund",
+    "The original featured poetic prose and surreal imagery",
+    "Four distinct mental landscapes, each with unique atmosphere and challenges",
+    "Sacred objects represent four pillars of civilization: Art, Knowledge, Courage, Hope",
+    "The game explores themes of consciousness, creativity, and human potential",
+    "Each mind should feel distinct: Poet=linguistic/artistic, Scientist=logical/mathematical,",
+    "General=strategic/martial, Prophet=temporal/mystical",
+    "Victory requires collecting all four objects, representing synthesis of human excellence",
+    "Robert Pinsky later became U.S. Poet Laureate (1997-2000)",
+    "The game was groundbreaking for its literary ambition and poetic writing"
   ]
 }

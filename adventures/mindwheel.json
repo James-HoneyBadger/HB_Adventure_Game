@@ -360,7 +360,7 @@
       "room_id": 1,
       "hardiness": 12,
       "agility": 10,
-      "friendliness": "friend",
+      "friendliness": "friendly",
       "courage": 100,
       "dialogue_id": 1,
       "can_trade": false
@@ -385,7 +385,7 @@
       "room_id": 10,
       "hardiness": 8,
       "agility": 16,
-      "friendliness": "friend",
+      "friendliness": "friendly",
       "courage": 60,
       "dialogue_id": 11,
       "can_trade": true
@@ -436,7 +436,7 @@
       "room_id": 53,
       "hardiness": 14,
       "agility": 13,
-      "friendliness": "friend",
+      "friendliness": "friendly",
       "courage": 90,
       "dialogue_id": 31,
       "can_trade": true
@@ -461,7 +461,7 @@
       "room_id": 72,
       "hardiness": 12,
       "agility": 18,
-      "friendliness": "friend",
+      "friendliness": "friendly",
       "courage": 85,
       "dialogue_id": 41,
       "can_trade": true
