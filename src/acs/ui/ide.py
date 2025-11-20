@@ -1366,17 +1366,31 @@ class AdventureIDE:
     def import_dsk(self):
         """Import a DSK file"""
         filename = filedialog.askopenfilename(
-            title="Import DSK File",
-            filetypes=[("DSK files", "*.dsk"), ("All files", "*.*")],
+            title="Import DSK/DO File",
+            filetypes=[
+                ("Apple II Disk Images", "*.dsk *.do *.DSK *.DO"),
+                ("DSK files", "*.dsk *.DSK"),
+                ("DO files", "*.do *.DO"),
+                ("All files", "*.*"),
+            ],
         )
 
         if not filename:
             return
 
         try:
+            # Find the converter script - it's in src/acs/tools/
+            # Current file is src/acs/ui/ide.py
+            # Go up one level to acs, then to tools
+            converter_path = os.path.join(
+                os.path.dirname(os.path.dirname(__file__)),
+                "tools",
+                "dsk_converter.py",
+            )
+
             # Run converter
             result = subprocess.run(
-                ["python3", "dsk_converter.py", filename, "adventures/_imported.json"],
+                ["python3", converter_path, filename, "adventures/_imported.json"],
                 capture_output=True,
                 text=True,
             )

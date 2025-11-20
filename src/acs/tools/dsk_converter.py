@@ -516,11 +516,13 @@ class EamonConverter:
 def main():
     """Main entry point"""
     if len(sys.argv) < 2:
-        print("Eamon DSK to JSON Converter")
+        print("Apple II Disk Image to JSON Converter")
         print("=" * 60)
-        print("\nUsage: dsk_converter.py <disk_image.dsk> [output.json]")
+        print("\nUsage: dsk_converter.py <disk_image> [output.json]")
+        print("\nSupported formats: .dsk, .do (DOS 3.3)")
         print("\nExamples:")
         print("  dsk_converter.py adventure.dsk")
+        print("  dsk_converter.py adventure.do")
         print("  dsk_converter.py adventure.dsk my_adventure.json")
         print("\nThis tool extracts Eamon adventure data from Apple II")
         print("disk images and converts it to JSON format compatible")
