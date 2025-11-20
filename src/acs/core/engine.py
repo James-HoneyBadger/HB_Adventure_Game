@@ -14,22 +14,26 @@ from enum import Enum
 
 # Import enhanced parser if available
 try:
-    from acs_parser import NaturalLanguageParser, Companion
-    from acs_npc_context import NPCContextManager, EmotionalState, RelationshipLevel
-    from acs_environment import EnvironmentalSystem, InspectableObject
-    from acs_commands import SmartCommandSystem
-    from acs_combat import (
+    from acs.core.parser import NaturalLanguageParser, Companion
+    from acs.systems.npc_context import (
+        NPCContextManager,
+        EmotionalState,
+        RelationshipLevel,
+    )
+    from acs.systems.environment import EnvironmentalSystem, InspectableObject
+    from acs.tools.commands import SmartCommandSystem
+    from acs.systems.combat import (
         CombatEncounter,
         Combatant,
         CombatTactic,
         StatusEffect,
         CombatPosition,
     )
-    from acs_achievements import AchievementSystem
-    from acs_journal import AdventureJournal
-    from acs_tutorial import ContextualHintSystem
-    from acs_modding import ModdingSystem, EventType
-    from acs_accessibility import AccessibilitySystem, DifficultyLevel
+    from acs.systems.achievements import AchievementSystem
+    from acs.systems.journal import AdventureJournal
+    from acs.systems.tutorial import ContextualHintSystem
+    from acs.tools.modding import ModdingSystem, EventType
+    from acs.ui.accessibility import AccessibilitySystem, DifficultyLevel
 
     ENHANCED_PARSER_AVAILABLE = True
 except ImportError:

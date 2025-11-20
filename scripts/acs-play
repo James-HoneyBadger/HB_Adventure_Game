@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+"""
+Adventure Construction Set - Game Launcher
+Play text adventures
+"""
+import sys
+from pathlib import Path
+
+# Add src to path
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+
+from acs.ui.launcher import AdventureLauncher
+
+if __name__ == "__main__":
+    launcher = AdventureLauncher()
+    launcher.run()

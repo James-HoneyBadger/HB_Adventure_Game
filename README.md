@@ -25,11 +25,13 @@ A powerful **Adventure Construction Set** for creating and playing text adventur
 # Clone or download this repository
 cd HB_Eamon
 
-# Launch the IDE
-python3 acs_ide.py
+# Run the quick start menu
+./quickstart.sh
 
-# Or play an adventure
-python3 acs_launcher.py
+# Or launch directly:
+./scripts/acs-ide        # Open IDE
+./scripts/acs-play       # Play adventures
+./scripts/acs-convert    # Convert Eamon DSK files
 ```
 
 That's it! No installation needed (Python 3.6+ required).
@@ -86,20 +88,25 @@ The parser understands natural language:
 
 ```
 HB_Eamon/
-├── 📁 core/           # Game engine components
-├── 📁 systems/        # Enhancement systems (combat, NPCs, etc.)
-├── 📁 ui/             # User interface
-├── 📁 utils/          # Utilities (parser, validation)
-├── 📁 plugins/        # Plugin system
-├── 📁 tests/          # Comprehensive test suite
-├── 📁 adventures/     # Adventure files (.json)
-├── 📁 saves/          # Save games
-├── 📁 docs/           # Documentation
-├── 📁 bin/            # Shell scripts
-├── acs_ide.py         # IDE launcher
-├── acs_engine.py      # Game engine
-├── acs_parser.py      # Command parser
-└── LICENSE            # MIT License
+├── src/acs/              # Source code
+│   ├── core/            # Game engine (parser, state, events)
+│   ├── systems/         # Game systems (combat, NPCs, environment)
+│   ├── ui/              # User interfaces (IDE, launcher)
+│   ├── tools/           # Utilities (DSK converter, modding)
+│   └── data/            # Data services (config, I/O)
+├── scripts/              # Executable scripts
+│   ├── acs-ide          # Launch IDE
+│   ├── acs-play         # Play adventures
+│   └── acs-convert      # Convert DSK files
+├── adventures/           # Adventure files (.json)
+├── docs/                 # Documentation
+├── tests/                # Test suite
+├── config/               # Configuration
+├── examples/             # Example adventures
+├── archive/              # Original Eamon games
+├── quickstart.sh         # Quick start menu
+├── README.md             # This file
+└── LICENSE               # MIT License
 ```
 
 ## 📚 Documentation
