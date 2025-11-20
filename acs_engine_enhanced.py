@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 Adventure Construction Set - Enhanced Game Engine
-Extends the classic adventure system with modern features while maintaining
-100% backward compatibility with original Eamon adventures and DSK imports.
+Extended features for rich interactive fiction experiences
 """
 
 import json
@@ -24,7 +23,7 @@ from acs.core.engine import (
     Monster,
     Room,
     Player,
-    EamonGame,
+    AdventureGame,
 )
 
 
@@ -408,7 +407,7 @@ class EnhancedPlayer(Player):
         self.agility += 2
 
 
-class EnhancedEamonGame(EamonGame):
+class EnhancedAdventureGame(AdventureGame):
     """Enhanced game engine with extended features"""
 
     def __init__(self, adventure_file: str):
@@ -528,7 +527,7 @@ class EnhancedEamonGame(EamonGame):
 
 # Export enhanced classes for use in other modules
 __all__ = [
-    "EnhancedEamonGame",
+    "EnhancedAdventureGame",
     "EnhancedItem",
     "EnhancedMonster",
     "EnhancedRoom",

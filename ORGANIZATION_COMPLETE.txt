@@ -1,6 +1,6 @@
 ╔════════════════════════════════════════════════════════════════════════════╗
 ║                    FILE ORGANIZATION - COMPLETE                            ║
-║                  Eamon Adventure Creation System v2.0                      ║
+║                   Adventure Construction System v2.0                       ║
 ╚════════════════════════════════════════════════════════════════════════════╝
 
 DATE: January 2025

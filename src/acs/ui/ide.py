@@ -2,7 +2,6 @@
 """
 Adventure Construction Set - Graphical Adventure Editor
 A complete IDE for creating, editing, and playing text adventures
-Compatible with classic Eamon format and Apple II DSK files
 """
 
 import tkinter as tk
@@ -288,7 +287,7 @@ class AdventureIDE:
         tools_menu.add_command(
             label="✓ Validate Adventure", command=self.validate_adventure
         )
-        tools_menu.add_command(label="💿 Import DSK File...", command=self.import_dsk)
+        # DSK import functionality removed
 
         # View menu
         view_menu = tk.Menu(
@@ -1363,51 +1362,7 @@ class AdventureIDE:
         else:
             messagebox.showinfo("Validation", "Adventure is valid!")
 
-    def import_dsk(self):
-        """Import a DSK file"""
-        filename = filedialog.askopenfilename(
-            title="Import DSK/DO File",
-            filetypes=[
-                ("Apple II Disk Images", "*.dsk *.do *.DSK *.DO"),
-                ("DSK files", "*.dsk *.DSK"),
-                ("DO files", "*.do *.DO"),
-                ("All files", "*.*"),
-            ],
-        )
-
-        if not filename:
-            return
-
-        try:
-            # Find the converter script - it's in src/acs/tools/
-            # Current file is src/acs/ui/ide.py
-            # Go up one level to acs, then to tools
-            converter_path = os.path.join(
-                os.path.dirname(os.path.dirname(__file__)),
-                "tools",
-                "dsk_converter.py",
-            )
-
-            # Run converter
-            result = subprocess.run(
-                ["python3", converter_path, filename, "adventures/_imported.json"],
-                capture_output=True,
-                text=True,
-            )
-
-            if result.returncode == 0:
-                # Load the imported adventure
-                with open("adventures/_imported.json", "r") as f:
-                    self.adventure = json.load(f)
-
-                self.current_file = None
-                self.modified = True
-                self.load_adventure_to_ui()
-                self.update_status("DSK file imported successfully")
-            else:
-                messagebox.showerror("Import Failed", result.stderr or "Unknown error")
-        except Exception as e:
-            messagebox.showerror("Error", f"Failed to import:\n{e}")
+    # DSK import functionality removed
 
     def show_help(self):
         """Show help dialog"""
@@ -1427,7 +1382,6 @@ Tips:
 - Use Preview tab to see JSON
 - Test frequently while building
 - Use Validate to check for errors
-- Compatible with classic Eamon format & Apple II DSK files
 
 Keyboard Shortcuts:
 Ctrl+N - New Adventure
@@ -1442,13 +1396,11 @@ F5 - Test Adventure
         messagebox.showinfo(
             "About",
             "🎮 Adventure Construction Set v2.0\n\n"
-            "A complete IDE for creating text adventures\n"
-            "Compatible with classic Eamon format\n\n"
+            "A complete IDE for creating text adventures\n\n"
             "Features:\n"
             "• Visual room editor\n"
             "• Item and NPC management\n"
             "• Adventure testing\n"
-            "• DSK file import\n"
             "• 5 beautiful themes (Dark, Light, Dracula, Nord, Monokai)\n"
             "• Customizable fonts\n"
             "• 30 natural language commands\n\n"
@@ -1529,7 +1481,7 @@ F5 - Test Adventure
             spec.loader.exec_module(acs_module)
 
             self.clear_game_output()
-            self.game_instance = acs_module.EnhancedEamonGame(temp_file)
+            self.game_instance = acs_module.EnhancedAdventureGame(temp_file)
             self.game_instance.load_adventure()
             self.game_running = True
 

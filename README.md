@@ -23,7 +23,7 @@ A powerful **Adventure Construction Set** for creating and playing text adventur
 
 ```bash
 # Clone or download this repository
-cd HB_Eamon
+cd HB_Adventure_Games
 
 # Run the quick start menu
 ./quickstart.sh

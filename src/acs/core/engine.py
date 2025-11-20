@@ -2,7 +2,7 @@
 """
 Adventure Construction Set - Game Engine
 A Python implementation of classic text adventure game mechanics
-Compatible with classic Eamon adventure format
+For creating and playing interactive fiction adventures
 """
 
 import json
@@ -158,8 +158,8 @@ class Player:
             self.current_health = self.hardiness
 
 
-class EamonGame:
-    """Main game engine for Eamon adventures"""
+class AdventureGame:
+    """Main game engine for text adventures"""
 
     def __init__(self, adventure_file: str):
         self.adventure_file = adventure_file
@@ -1343,10 +1343,10 @@ class EamonGame:
 def main():
     """Entry point"""
     if len(sys.argv) < 2:
-        print("Usage: eamon_engine.py <adventure_file.json>")
+        print("Usage: adventure_engine.py <adventure_file.json>")
         sys.exit(1)
 
-    game = EamonGame(sys.argv[1])
+    game = AdventureGame(sys.argv[1])
     game.run()
 
 

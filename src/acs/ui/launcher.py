@@ -60,7 +60,7 @@ class AdventureLauncher:
  ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
         """
         )
-        print("         WONDERFUL WORLD OF EAMON - LINUX EDITION")
+        print("         ADVENTURE CONSTRUCTION SYSTEM")
         print("=" * 70)
 
     def show_menu(self):
@@ -136,7 +136,7 @@ class AdventureLauncher:
         spec.loader.exec_module(acs_module)
 
         # Create and run game
-        game = acs_module.EnhancedEamonGame(str(adventure_file))
+        game = acs_module.EnhancedAdventureGame(str(adventure_file))
         game.run()
 
         print("\n" + "=" * 70)

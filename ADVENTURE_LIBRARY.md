@@ -196,7 +196,7 @@ All adventures have been validated for:
 
 ## 🛠️ Technical Notes
 
-- All adventures use the enhanced Eamon engine (`acs_engine_enhanced.py`)
+- All adventures use the enhanced engine (`acs_engine_enhanced.py`)
 - JSON format allows easy editing and customization
 - Compatible with the Adventure Construction Set IDE
 - Support for quests, puzzles, dialogues, and special properties
